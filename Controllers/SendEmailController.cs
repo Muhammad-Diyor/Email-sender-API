@@ -1,3 +1,4 @@
+using System.Web;
 using EmailSender.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,10 +16,9 @@ public class SendEmailController : ControllerBase
     }
     
     [HttpPost]
-    [Route("{to}/{mailBody}")]
-    public IActionResult Get(string to, string mailBody)
+    public IActionResult Get([FromQuery]string subject, [FromQuery]string to, [FromQuery]string mailBody)
     {
-        var message = new Message(new string[] {$"{to}"}, "Test email", $"{mailBody}");
+        var message = new Message(new string[]  {$"{to}"}, subject, mailBody);
         _emailSender.SendEmail(message);
         return Ok($"{to} == {mailBody}");
     }
