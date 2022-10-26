@@ -20,6 +20,9 @@ public class SendEmailController : ControllerBase
     {
         var message = new Message(new string[]  {$"{to}"}, subject, mailBody);
         _emailSender.SendEmail(message);
-        return Ok($"{to} == {mailBody}");
+        return Ok($@"Email sent successfully.
+    To: {to};
+    Subject: {subject};
+    Message: {mailBody};");
     }
 }
