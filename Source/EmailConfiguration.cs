@@ -1,4 +1,4 @@
-namespace EmailSender.Source;
+namespace EmailSender;
 
 public class EmailConfiguration
 {

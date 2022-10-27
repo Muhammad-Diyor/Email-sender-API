@@ -1,8 +1,8 @@
 using System.Web;
-using EmailSender.Source.Services;
+using EmailSender.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EmailSender.Source.Controllers;
+namespace EmailSender.Controllers;
 
 [ApiController]
 [Route("[controller]")]

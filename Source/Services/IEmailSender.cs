@@ -1,4 +1,4 @@
-namespace EmailSender.Source.Services;
+namespace EmailSender.Services;
 
 public interface IEmailSender
 {

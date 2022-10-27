@@ -1,5 +1,5 @@
-using EmailSender.Source;
-using EmailSender.Source.Services;
+using EmailSender;
+using EmailSender.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +12,7 @@ var emailConfig = builder.Configuration
     
 builder.Services.AddSingleton(emailConfig);
 
-builder.Services.AddScoped<IEmailSender, EmailSender.Source.Services.EmailSender>();
+builder.Services.AddScoped<IEmailSender, EmailSender.Services.EmailSender>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
